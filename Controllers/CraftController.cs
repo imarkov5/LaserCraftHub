@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using LaserCraftHub.Attributes;
 using LaserCraftHub.Context;
 using LaserCraftHub.Models;
+using LaserCraftHub.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LaserCraftHub.Controllers
 {
@@ -27,7 +29,13 @@ namespace LaserCraftHub.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View("Crafts");
+            var crafts = _context.Crafts.Include(c => c.Likes).ThenInclude(l => l.User).ToList();
+            var viewModel = new CraftsPageViewModel()
+            {
+                User = _context.Users.FirstOrDefault(u => u.UserId == userId),
+                Crafts = crafts,
+            };
+            return View("Crafts", viewModel);
         }
 
         [SessionCheck]

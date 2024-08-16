@@ -1,1 +1,53 @@
-<p>Crafts</p>
+@model CraftsPageViewModel;
+
+@{
+    var crafts = Model.Crafts;
+    var loggedInUser = Model.User;
+}
+
+<div class="row">
+    @if (crafts != null && crafts.Any())
+    {
+        foreach (var craft in crafts)
+        {
+            <div class="card col-4">
+                <h6>@(craft?.Name ?? "Unknown Craft") by @(craft?.User?.FullName ?? "Unknown User")</h6>
+                <p>Picture</p>
+                <button class="btn btn-lg btn-outline-primary"><a href="">Learn More</a></button>
+
+                @if (loggedInUser.UserId == craft.UserId)
+                {
+                    <div class="d-flex gap-1">
+                        <a class="btn btn-warning btn-sm" href="/crafts/@craft.CraftId/edit">Edit</a>
+                        <form asp-action="DeleteCraft" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                }
+                else if (craft.isLiked(loggedInUser.UserId))
+                {
+
+                    <form asp-action="UnRSVP" asp-controller="Wedding" asp-route-weddingId="@craft.CraftId" method="post">
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-sm btn-warning">Un-Like</button>
+                        </div>
+                    </form>
+                }
+                else if (!craft.isLiked(loggedInUser.UserId))
+                {
+                    <form asp-action="Like" asp-controller="Craft" asp-route-weddingId="@craft.CraftId" method="post">
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-sm btn-primary">Like</button>
+                        </div>
+                    </form>
+                }
+            </div>
+        }
+    }
+    else
+    {
+        <p>No crafts available.</p>
+    }
+</div>

@@ -29,5 +29,10 @@ namespace LaserCraftHub.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
+        public bool isLiked(int userId)
+        {
+            return Likes.Any(l => l.UserId == userId);
+        }
+
     }
 }
