@@ -100,3 +100,4 @@ C:\Users\imarkov\documents\wos\Coding_Dojo_WOS\CSHARP_DOTNET8\LaserCraftHub\obj\
 C:\Users\imarkov\documents\wos\Coding_Dojo_WOS\CSHARP_DOTNET8\LaserCraftHub\obj\Debug\net8.0\LaserCraftHub.pdb
 C:\Users\imarkov\documents\wos\Coding_Dojo_WOS\CSHARP_DOTNET8\LaserCraftHub\obj\Debug\net8.0\LaserCraftHub.genruntimeconfig.cache
 C:\Users\imarkov\documents\wos\Coding_Dojo_WOS\CSHARP_DOTNET8\LaserCraftHub\obj\Debug\net8.0\ref\LaserCraftHub.dll
+C:\Users\imarkov\documents\wos\Coding_Dojo_WOS\CSHARP_DOTNET8\LaserCraftHub\obj\Debug\net8.0\LaserCraftHub.sourcelink.json
