@@ -1,0 +1,16 @@
+@model Comment
+@{
+    var comment = Model;
+}
+
+<form asp-action="CreateComment" asp-controller="Message" method="post" asp-route-messageId="@comment.MessageId">
+    <div class="mb-3">
+        <label class="form-label" asp-for="CommentText"></label>
+        <textarea class="form-control" rows="3" asp-for="CommentText"></textarea>
+        <input type="hidden" name="MessageId" value="@comment.MessageId" />
+        <span class="form-text text-warning" asp-validation-for="CommentText"></span>
+    </div>
+    <div class="text-end">
+        <button type="submit" class="btn btn-primary">Post Comment</button>
+    </div>
+</form>

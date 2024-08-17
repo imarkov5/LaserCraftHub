@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LaserCraftHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8548c0b102585c067120e699d04f27f2f69529ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+739b357618c8a7f8237811d87f6c3e8ad94637fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("LaserCraftHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LaserCraftHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

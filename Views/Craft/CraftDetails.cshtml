@@ -1,0 +1,58 @@
+@model CraftDetailsViewModel
+@{
+    var craft = Model.Craft;
+
+    var loggedInUser = Model.User;
+
+    var comment = Model.Comment;
+
+    var message = Model.Message;
+
+    var messages = Model.Messages;
+}
+
+<h1 class="display-2">@craft.Name</h1>
+
+<p>craft pics</p>
+
+<p>@craft.Description</p>
+
+<p>Liked by @craft.Likes.Count users</p>
+@if (loggedInUser.UserId == craft.UserId)
+
+{
+    <div class="d-flex gap-1">
+        <a class="btn btn-warning btn-sm" href="/crafts/@craft.CraftId/edit">Edit</a>
+        <form asp-action="DeleteCraft" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
+            <div class="text-end">
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+}
+<section>
+    <p class="text-end">Please post comments and questions</p>
+
+    @await Html.PartialAsync("../Partials/_MessageForm", message)
+    <!-- Display all messages and comments -->
+    @foreach (var m in messages.OrderByDescending(m => m.CreatedAt))
+
+    {
+        @if (m.CraftId == craft.CraftId)
+
+        {
+            <div class="message-container">
+                <h2>@m.MessageText</h2>
+                <p>Posted by: @m.User.FullName</p>
+                <p>@m.CreatedAt.ToString("MM/dd/yyyy HH:mm:ss")</p>
+
+                <!-- Partial view for displaying comments -->
+                @await Html.PartialAsync("../Partials/_Comments", m)
+
+                <!-- Partial view for the comment form -->
+                @await Html.PartialAsync("../Partials/_CommentForm", new Comment { MessageId = m.MessageId })
+            </div>
+        }
+
+    }
+</section>

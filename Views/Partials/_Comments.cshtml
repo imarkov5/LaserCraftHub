@@ -1,0 +1,23 @@
+@model Message
+@{
+    var message = Model;
+}
+<div class="comments-section">
+    @if (message.Comments != null && message.Comments.Any())
+    {
+        <h3>Comments:</h3>
+        <ul class="list-group">
+            @foreach (var comment in message.Comments)
+            {
+                <li class="list-group-item">
+                    <strong>@comment.User.FullName</strong> - @comment.CreatedAt.ToString("MM/dd/yyyy HH:mm:ss")
+                    <p>@comment.CommentText</p>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No comments yet.</p>
+    }
+</div>

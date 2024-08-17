@@ -44,8 +44,8 @@ namespace LaserCraftHub.Models
         public List<Craft> Crafts { get; set; } = [];
         public List<Like> Likes { get; set; } = [];
 
-        // public List<Comment> Comments { get; set; } = [];
-        // public List<Message> Messages { get; set; } = [];
+        public List<Comment> Comments { get; set; } = [];
+        public List<Message> Messages { get; set; } = [];
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;

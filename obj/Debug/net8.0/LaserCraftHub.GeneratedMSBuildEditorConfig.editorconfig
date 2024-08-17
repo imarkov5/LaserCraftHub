@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\imarkov\documents\wos\Coding_Dojo_WOS\CSHARP_DOTNET8\LaserCraftHub
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Craft/CraftDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JhZnRcQ3JhZnREZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Craft/Crafts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JhZnRcQ3JhZnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Craft/EditCraft.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JhZnRcRWRpdENyYWZ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Craft/NewCraft.cshtml]
@@ -34,8 +42,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Partials/_CommentForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0NvbW1lbnRGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Partials/_Comments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0NvbW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Partials/_LoginForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0xvZ2luRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Partials/_MessageForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX01lc3NhZ2VGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/imarkov/documents/wos/Coding_Dojo_WOS/CSHARP_DOTNET8/LaserCraftHub/Views/Partials/_RegisterForm.cshtml]

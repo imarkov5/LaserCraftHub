@@ -1,7 +1,6 @@
 #pragma warning disable CS8618
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LaserCraftHub.Models
 {
@@ -25,6 +24,8 @@ namespace LaserCraftHub.Models
         public User? User { get; set; }
 
         public List<Like> Likes { get; set; } = [];
+
+        public List<Message> Messages { get; set; } = [];
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;

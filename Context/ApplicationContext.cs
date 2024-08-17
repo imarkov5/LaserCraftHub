@@ -14,7 +14,7 @@ namespace LaserCraftHub.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Craft> Crafts { get; set; }
         public DbSet<Like> Likes { get; set; }
-        // public DbSet<Message> Messages { get; set; }
-        // public DbSet<Comment> Comments { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }
