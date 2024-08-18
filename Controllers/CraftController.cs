@@ -27,7 +27,7 @@ namespace LaserCraftHub.Controllers
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("LogReg");
             }
             var crafts = _context.Crafts.Include(c => c.Likes).ThenInclude(l => l.User).ToList();
             var viewModel = new CraftsPageViewModel()
@@ -45,7 +45,7 @@ namespace LaserCraftHub.Controllers
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("LogReg");
             }
             var craft = new Craft()
             {
@@ -63,7 +63,7 @@ namespace LaserCraftHub.Controllers
                 int? userId = HttpContext.Session.GetInt32("userId");
                 if (userId is null)
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("LogReg");
                 }
 
                 var craft = new Craft()
@@ -137,7 +137,7 @@ namespace LaserCraftHub.Controllers
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("LogReg");
             }
             var newLike = new Like()
             {
@@ -156,7 +156,7 @@ namespace LaserCraftHub.Controllers
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("LogReg");
             }
             var likeToRemove = _context.Likes.FirstOrDefault(l => l.UserId == userId && l.CraftId == craftId);
 
@@ -176,7 +176,7 @@ namespace LaserCraftHub.Controllers
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("LogReg");
             }
             var craft = _context.Crafts.Include(c => c.Likes).ThenInclude(l => l.User).FirstOrDefault(c => c.CraftId == craftId);
             var loggedInUser = _context.Users.FirstOrDefault(u => u.UserId == userId);

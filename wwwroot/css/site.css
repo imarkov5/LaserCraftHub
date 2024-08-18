@@ -23,6 +23,9 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .footer {
   position: absolute;
@@ -30,4 +33,11 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+.logo {
+  height: 50px;
+}
+.home {
+  text-decoration: none;
+  color: white;
 }

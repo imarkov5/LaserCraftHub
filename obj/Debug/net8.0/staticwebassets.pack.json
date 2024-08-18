@@ -9,6 +9,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\background.jpg",
+      "PackagePath": "staticwebassets\\images\\background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\background.png",
+      "PackagePath": "staticwebassets\\images\\background.png"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\background1.webp",
+      "PackagePath": "staticwebassets\\images\\background1.webp"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\logo1.png",
+      "PackagePath": "staticwebassets\\images\\logo1.png"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\logoBlue.png",
+      "PackagePath": "staticwebassets\\images\\logoBlue.png"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\navbarBackground1.png",
+      "PackagePath": "staticwebassets\\images\\navbarBackground1.png"
+    },
+    {
       "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

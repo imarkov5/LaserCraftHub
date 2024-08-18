@@ -20,7 +20,13 @@ public class HomeController : Controller
     }
 
     [HttpGet("")]
-    public IActionResult Index(string? message)
+    public IActionResult Index()
+    {
+        return View("Index");
+    }
+
+    [HttpGet("/login")]
+    public IActionResult LogReg(string? message)
     {
         ViewBag.Message = message;
 
@@ -29,7 +35,7 @@ public class HomeController : Controller
             User = new User(),
             LoginUser = new LoginUser()
         };
-        return View("Index", homeViewModel);
+        return View("LogReg", homeViewModel);
     }
 
 
@@ -43,7 +49,7 @@ public class HomeController : Controller
                 User = new User(),
                 LoginUser = new LoginUser(),
             };
-            return View("Index", homeViewModel);
+            return View("LogReg", homeViewModel);
         }
         var hasher = new PasswordHasher<User>();
         newUser.Password = hasher.HashPassword(newUser, newUser.Password);
@@ -65,12 +71,12 @@ public class HomeController : Controller
                 User = new User(),
                 LoginUser = new LoginUser(),
             };
-            return View("Index", homeViewModel);
+            return View("LogReg", homeViewModel);
         }
         var user = _context.Users.SingleOrDefault((user) => user.Email == loginUser.Email);
         if (user is null)
         {
-            return RedirectToAction("Index", new { message = "invalid-credentials" });
+            return RedirectToAction("LogReg", new { message = "invalid-credentials" });
         }
         var hasher = new PasswordHasher<User>();
 
@@ -82,7 +88,7 @@ public class HomeController : Controller
 
         if (result == 0)
         {
-            return RedirectToAction("Index", new { message = "invalid-credentials" });
+            return RedirectToAction("LogReg", new { message = "invalid-credentials" });
         }
 
         HttpContext.Session.SetInt32("userId", user.UserId);
@@ -94,7 +100,7 @@ public class HomeController : Controller
     public RedirectToActionResult Logout()
     {
         HttpContext.Session.Clear();
-        return RedirectToAction("Index");
+        return RedirectToAction("LogReg");
     }
 
     public IActionResult Privacy()

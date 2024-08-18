@@ -25,7 +25,7 @@ namespace LaserCraftHub.Controllers
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("LogReg");
             }
             if (!ModelState.IsValid)
             {
@@ -76,7 +76,7 @@ namespace LaserCraftHub.Controllers
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("LogReg");
             }
 
             if (!ModelState.IsValid)
