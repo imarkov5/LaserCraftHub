@@ -22,6 +22,10 @@ html {
 }
 
 body {
+  font-family: "Hanken Grotesk", sans-serif;
+  background-color: #020202;
+}
+.welcome-page {
   margin-bottom: 60px;
   background-image: url("/images/background.png");
   background-size: cover;
@@ -37,7 +41,65 @@ body {
 .logo {
   height: 50px;
 }
-.home {
+nav,
+.welcome,
+.start-here {
+  font-family: "Audiowide", sans-serif;
+}
+a {
   text-decoration: none;
   color: white;
+}
+.welcome {
+  position: relative;
+  top: 30rem;
+}
+.start-here {
+  position: relative;
+  top: 7rem;
+}
+.learn-more {
+  background-color: #f15723;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  padding: 15px, 32px !important;
+  margin: 10px 0 10px;
+}
+
+.learn-more:hover {
+  background-color: #b72e00;
+}
+
+.btn-heart {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  outline: none;
+}
+
+.outlined-heart {
+  color: red;
+}
+
+.filled-heart {
+  color: red;
+}
+
+.animate-heart:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

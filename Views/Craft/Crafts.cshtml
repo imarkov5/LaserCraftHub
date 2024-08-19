@@ -6,60 +6,129 @@
     var loggedInUser = Model.User;
 }
 
-<div class="row">
-    @if (crafts != null && crafts.Any())
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    {
-
-        foreach (var craft in crafts)
-
-        {
-            <div class="card col-4">
-                <h6>@(craft?.Name ?? "Unknown Craft") by @(craft?.User?.FullName ?? "Unknown User")</h6>
-                <p>Picture</p>
-                <button class="btn learn-more"><a href="/crafts/@craft.CraftId">Learn More</a></button>
-
-                @if (loggedInUser.UserId == craft.UserId)
-
-                {
-                    <div class="d-flex gap-1">
-                        <a class="btn btn-warning btn-sm" href="/crafts/@craft.CraftId/edit">Edit</a>
-                        <form asp-action="DeleteCraft" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
-                            <div class="text-end">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </div>
-                        </form>
-                    </div>
-                }
-
-                else if (craft.isLiked(loggedInUser.UserId))
-
-                {
-
-                    <form asp-action="UnLike" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
-                        <div class="text-end">
-                            <button type="submit" class="btn btn-sm btn-warning">Un-Like</button>
-                        </div>
-                    </form>
-                }
-
-                else if (!craft.isLiked(loggedInUser.UserId))
-
-                {
-                    <form asp-action="Like" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
-                        <div class="text-end">
-                            <button type="submit" class="btn btn-sm btn-primary">Like</button>
-                        </div>
-                    </form>
-                }
+<section class="mt-5 mb-5">
+    <div class="mb-4 d-flex justify-content-center">
+        <form asp-controller="Craft" asp-action="Crafts" method="get" class="w-50">
+            <div class="input-group rounded">
+                <input name="SearchString" type="search" class="form-control rounded" placeholder="Search by craft name"
+                    aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="btn btn-outline-secondary border-1" id="search-addon" aria-label="Search">
+                    <i class="bi bi-search" style="background-color: #222529;"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </button>
             </div>
+        </form>
+    </div>
+
+
+    <div class="d-flex justify-content-center row">
+        @if (crafts != null && crafts.Any())
+        {
+            foreach (var craft in crafts)
+            {
+                <div class="card bg-transparent col-4" style="width: rem;">
+                    <img src="~/images/lantern.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@(craft?.Name ?? "Unknown Craft")</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">by @(craft?.User?.FullName ?? "Unknown User")</h6>
+                        <div class="d-flex justify-content-center"><a href="/crafts/@craft.CraftId"
+                                class="btn learn-more px-5 py-2">Learn
+                                More</a></div>
+
+                        @if (loggedInUser.UserId == craft.UserId)
+                        {
+                            <div class="d-flex gap-1 justify-content-end">
+                                <a class="btn btn-outline-warning btn-sm" href="/crafts/@craft.CraftId/edit">Edit</a>
+                                <form asp-action="DeleteCraft" asp-controller="Craft" asp-route-craftId="@craft.CraftId"
+                                    method="post">
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="d-flex justify-content-end gap-1 mt-3">
+                                @if (craft.isLiked(loggedInUser.UserId))
+                                {
+                                    <!-- Un-Like Button with Filled Heart -->
+                                    <form asp-action="UnLike" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
+                                        <button type="submit" class="btn-heart filled-heart">
+                                            <i class="fas fa-heart"></i> <!-- Filled heart icon -->
+                                        </button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <!-- Like Button with Outlined Heart -->
+                                    <form asp-action="Like" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
+                                        <button type="submit" class="btn-heart outlined-heart animate-heart">
+                                            <i class="far fa-heart"></i> <!-- Outlined heart icon -->
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        }
+
+                        @* else if (craft.isLiked(loggedInUser.UserId))
+                {
+                <form asp-action="UnLike" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
+                <div>
+                <button type="submit" class="btn btn-sm btn-outline-secondary">Un-Like</button>
+                </div>
+                </form>
+                }
+                else if (!craft.isLiked(loggedInUser.UserId))
+                {
+                <form asp-action="Like" asp-controller="Craft" asp-route-craftId="@craft.CraftId" method="post">
+                <div>
+                <button type="submit" class="btn btn-sm btn-outline-secondary">Like</button>
+                </div>
+                </form>
+                } *@
+                    </div>
+                </div>
+            }
         }
+        else
+        {
+            <p>No crafts available.</p>
+        }
+    </div>
+</section>
+<script>
+    document.querySelectorAll('.btn-like').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default form submission
 
-    }
+            // Optional: Toggle the class to show animation
+            this.classList.toggle('animate-heart');
 
-    else
-
-    {
-        <p>No crafts available.</p>
-    }
-</div>
+            // Optional: Send AJAX request to server
+            const form = this.closest('form');
+            fetch(form.action, {
+                method: form.method,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(new FormData(form)).toString(),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle success (e.g., update UI based on response)
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    // Handle error
+                    console.error('Error:', error);
+                });
+        });
+    });
+</script>

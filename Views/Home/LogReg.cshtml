@@ -1,38 +1,26 @@
 @model HomePageViewModel;
 @{
     var user = Model.User;
-
     var loginUser = Model.LoginUser;
-
     ViewData["Title"] = "Home Page";
 }
-
-
-<section>
+<body class="welcome-page">
     @if (ViewBag.Message is not null)
-
     {
-
         if (ViewBag.Message == "not-authenticated")
-
         {
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 You must be logged in.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         }
-
-
-
         else if (ViewBag.Message == "invalid-credentials")
-
         {
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 Invalid credentials. Please try again.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         }
-
     }
 
     <div class="row">
@@ -60,4 +48,4 @@
 
 
 
-</section>
+</body>

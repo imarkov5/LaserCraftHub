@@ -22,14 +22,20 @@ namespace LaserCraftHub.Controllers
 
         [SessionCheck]
         [HttpGet("crafts")]
-        public IActionResult Crafts()
+        public IActionResult Crafts(string searchString)
         {
             int? userId = HttpContext.Session.GetInt32("userId");
             if (userId is null)
             {
                 return RedirectToAction("LogReg");
             }
-            var crafts = _context.Crafts.Include(c => c.Likes).ThenInclude(l => l.User).ToList();
+            var crafts = _context.Crafts.Include(c => c.Likes).ThenInclude(l => l.User).Include(c => c.User).ToList();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                crafts = crafts.Where(c => c.Name.ToLower().Contains(searchString.ToLower())).ToList();
+            }
+
             var viewModel = new CraftsPageViewModel()
             {
                 User = _context.Users.FirstOrDefault(u => u.UserId == userId),
@@ -185,6 +191,13 @@ namespace LaserCraftHub.Controllers
                 .ThenInclude(c => c.User)
                 .Include(m => m.User)
                 .ToList();
+
+            // var messages = _context.Messages
+            // .Include(m => m.Comments)
+            // .ThenInclude(c => c.User)
+            // .Include(m => m.User)
+            // .Where(m => m.CraftId == craftId)
+            // .ToList();
 
             var message = new Message()
             {

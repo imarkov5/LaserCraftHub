@@ -21,6 +21,22 @@
       "PackagePath": "staticwebassets\\images\\background1.webp"
     },
     {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\book.jpg",
+      "PackagePath": "staticwebassets\\images\\book.jpg"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\coasters.jpg",
+      "PackagePath": "staticwebassets\\images\\coasters.jpg"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\gift-box.jpg",
+      "PackagePath": "staticwebassets\\images\\gift-box.jpg"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\lantern.jpg",
+      "PackagePath": "staticwebassets\\images\\lantern.jpg"
+    },
+    {
       "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\logo1.png",
       "PackagePath": "staticwebassets\\images\\logo1.png"
     },
@@ -31,6 +47,10 @@
     {
       "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\navbarBackground1.png",
       "PackagePath": "staticwebassets\\images\\navbarBackground1.png"
+    },
+    {
+      "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\images\\pencil-holder.jpg",
+      "PackagePath": "staticwebassets\\images\\pencil-holder.jpg"
     },
     {
       "Id": "C:\\Users\\imarkov\\documents\\wos\\Coding_Dojo_WOS\\CSHARP_DOTNET8\\LaserCraftHub\\wwwroot\\js\\site.js",
