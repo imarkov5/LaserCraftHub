@@ -10,7 +10,7 @@
             @foreach (var comment in message.Comments)
             {
                 <li class="list-group-item">
-                    <strong>@comment.User.FullName</strong> - @comment.CreatedAt.ToString("MM/dd/yyyy HH:mm:ss")
+                    <strong>@comment.User.FullName</strong> wrote at @comment.CreatedAt.ToString("MMM d, yyyy HH:mm")
                     <p>@comment.CommentText</p>
                 </li>
             }

@@ -53,7 +53,7 @@
                 <div class="message-container w-50">
                     <h2>@m.MessageText</h2>
                     <p>Posted by: @m.User.FullName</p>
-                    <p>@m.CreatedAt.ToString("MM/dd/yyyy HH:mm:ss")</p>
+                    <p>@m.CreatedAt.ToString("MMM d, yyyy HH:mm")</p>
 
                     <!-- Partial view for displaying comments -->
                     @await Html.PartialAsync("../Partials/_Comments", m)
