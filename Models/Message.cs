@@ -11,7 +11,7 @@ namespace LaserCraftHub.Models
         public int MessageId { get; set; }
 
         [Required(ErrorMessage = "You can't post empty message.")]
-        [Display(Name = "Post a message")]
+        [Display(Name = "Ask a question or leave a comment:")]
         public string MessageText { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
